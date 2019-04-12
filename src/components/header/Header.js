@@ -1,88 +1,67 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
-
+import { connect } from 'react-redux';
 import Menu from '../menu/Menu.js';
 import Modal from '../modal/Modal.js';
-
+import { SetIdiom } from '../../actions/Actions';
+import {idioms,SelectIdiom} from '../../globals.js';
 import './header.scss';
 
-const idiom0Msg1= 'Wellcome to react dev page!!!';
-const idiom0Msg2= 'Awesome things awaits you!!!';
-const idiom0MenuItem1= 'idiom';
-const idiom1Msg1= 'Bienvenidos a mi nueva página!!!';
-const idiom1Msg2= 'Cosas impresionantes te esperan!!!';
-const idiom1MenuItem1= 'idioma';
+const msgs1= ['Wellcome to react dev page!!!'
+              ,'Bienvenidos a mi nueva página!!!'];
+const msgs2= ['Awesome things awaits you!!!'
+              ,'Cosas impresionantes te esperan!!!'];
+const msgs3= ['idiom'
+              ,'idioma'];
 
-const idioms=['english','español'];
-
-const Header = ()=>
+const Header = (props)=>
 {
-  const [idiom, setIdiom] = useState(idioms[0]);
+  //managing idiom global state
   const setIdiom0=()=>
   {
-    setIdiom(idioms[0]);
+    props.SetIdiom(idioms[0]);
   };
   const setIdiom1=()=>
   {
-    setIdiom(idioms[1]);
+    props.SetIdiom(idioms[1]);
   };
-  const SetIdiom=(idiom)=>
+  const SetIdiom_=(idiom)=>
   {
     switch (idiom){
       case idioms[0]: return setIdiom0;
       case idioms[1]: return setIdiom1;
     }
   };
+
+  //managing showModal local state
   const [showModalIdiom, setShowModalIdiom] = useState(false);
   const ShowModalIdiom=()=>
   {
     setShowModalIdiom(!showModalIdiom);
   };
+
   const idiomsList= idioms.map
   (
     (idiom)=>
     (
       <li>
-        <div onClick={SetIdiom(idiom)}>
+        <div onClick={SetIdiom_(idiom)}>
           <i class="fas fa-angle-right"></i>
           {idiom}
         </div>
       </li>
     )
   );
-  const SelectIdiomMenuItem=()=>
-  {
-      switch(idiom)
-      {
-        case idioms[0]:return idiom0MenuItem1;
-        case idioms[1]:return idiom1MenuItem1;
-      }
-  };
-  const SelectIdiomMsg1=()=>
-  {
-      switch(idiom)
-      {
-        case idioms[0]:return idiom0Msg1;
-        case idioms[1]:return idiom1Msg1;
-      }
-  };
-  const SelectIdiomMsg2=()=>
-  {
-      switch(idiom)
-      {
-        case idioms[0]:return idiom0Msg2;
-        case idioms[1]:return idiom1Msg2;
-      }
-  };
+  
   const render =
   (
-    <div className='header'>
+    <div id='Header'>
       <Menu>
         <div>
           <ul>
             <li>
               <div  onClick={ShowModalIdiom}>
-                {SelectIdiomMenuItem()}
+                {SelectIdiom(msgs3)(props)}
                 <i class="fas fa-angle-right"></i>
               </div>
               <Modal show={showModalIdiom}>
@@ -96,11 +75,11 @@ const Header = ()=>
       </Menu>
       <div id='cabecera'>
         <div className='msg'>
-          <span>{SelectIdiomMsg1()}</span>
+          <span>{SelectIdiom(msgs1)(props)}</span>
         </div>
         <div className='clearfix'/>
         <div className='msg'>
-          <span>{SelectIdiomMsg2()}</span>
+          <span>{SelectIdiom(msgs2)(props)}</span>
         </div>
         <div className='clearfix'/>
       </div>
@@ -110,4 +89,15 @@ const Header = ()=>
   return render;
 };
 
-export default Header;
+const mapStateToProps=(state)=>
+{
+  return {
+    idiom: state.idiom
+  };
+}
+
+const mapDispatchToProps = {
+  SetIdiom
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

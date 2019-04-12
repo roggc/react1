@@ -1,0 +1,29 @@
+
+body
+{
+  background-color: black;
+  color:purple;
+  margin:20px 20px;
+  font-family: sans-serif;
+  user-select: none;
+}
+
+hr
+{
+  border-color:purple;
+}
+
+.clearfix
+{
+  clear:both;
+}
+
+.msg
+{
+    border-radius: 5px;
+    padding:5px;
+    --float:left;
+    background-color: white;
+    --margin-left:20px;
+    margin-bottom:5px;
+}
