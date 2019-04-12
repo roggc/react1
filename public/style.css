@@ -1,0 +1,13 @@
+
+body
+{
+  background-color: black;
+  color:white;
+  margin:20px 20px;
+  font-family: sans-serif;
+}
+
+.clearfix
+{
+  clear:both;
+}

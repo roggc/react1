@@ -1,0 +1,21 @@
+.noDisplay
+{
+  display: none;
+}
+
+.content
+{
+  li
+  {
+      white-space: nowrap;
+  }
+
+  --position: relative;
+  --right:5%;
+  --z-index:1;
+  --float:left;
+  background-color: white;
+  border-radius: 5px;
+  --color:black;
+  padding:5px;
+}

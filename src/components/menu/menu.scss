@@ -1,0 +1,36 @@
+.noDisplay
+{
+  display: none;
+}
+
+.menu
+{
+  cursor:pointer;
+  float:right;
+  --color:white;
+
+  ul
+  {
+    margin:0px 0px;
+    padding: 0px 0px;
+    text-decoration: none;
+    list-style-type: none;
+  }
+
+  .icon
+  {
+    float:right;
+  }
+
+  .content
+  {
+    position:absolute;
+    right:5%;
+    z-index:1;
+    --float:right;
+    background-color: white;
+    border-radius: 5px;
+    --color:black;
+    padding:5px;
+  }
+}
