@@ -4,8 +4,8 @@ import { Route, Link } from 'react-router-dom'
 import './content.scss'
 
 import Home from '../home/Home'
-import Contact from '../Contact'
-import About from '../About'
+import Contact from '../contact/Contact'
+import About from '../about/About'
 
 const Content = ()=>
 (

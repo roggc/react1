@@ -13,6 +13,12 @@ const msgs2= ['Awesome things awaits you!!!'
               ,'Cosas impresionantes te esperan!!!'];
 const msgs3= ['idiom'
               ,'idioma'];
+const msgs4= ['about'
+              ,'acerca de'];
+const msgs5= ['home'
+              ,'casa'];
+const msgs6=['contact'
+            ,'contacto'];
 
 const Header = (props)=>
 {
@@ -52,7 +58,7 @@ const Header = (props)=>
       </li>
     )
   );
-  
+
   const render =
   (
     <div id='Header'>
@@ -70,6 +76,15 @@ const Header = (props)=>
                 </div>
               </Modal>
             </li>
+            <li>
+              <Link to="/about/">{SelectIdiom(msgs4)(props)}</Link>
+            </li>
+            <li>
+              <Link to="/contact/">{SelectIdiom(msgs6)(props)}</Link>
+            </li>
+            <li>
+              <Link to="/">{SelectIdiom(msgs5)(props)}</Link>
+            </li>
           </ul>
         </div>
       </Menu>
@@ -77,7 +92,6 @@ const Header = (props)=>
         <div className='msg'>
           <span>{SelectIdiom(msgs1)(props)}</span>
         </div>
-        <div className='clearfix'/>
         <div className='msg'>
           <span>{SelectIdiom(msgs2)(props)}</span>
         </div>

@@ -12,7 +12,7 @@ const Menu = (props)=>
 
   const render=
   (
-    <div className='menu'>
+    <div id='Menu' className='menu'>
       <div className='icon'>
         <i class="fas fa-align-justify" onClick={toggleShow}></i>
       </div>

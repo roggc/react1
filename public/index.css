@@ -8,6 +8,12 @@ body
   user-select: none;
 }
 
+a, a:link, a:visited, a:focus, a:hover, a:active{
+  color:purple;
+  text-decoration:none;
+  cursor: pointer;
+}
+
 hr
 {
   border-color:purple;
@@ -22,8 +28,7 @@ hr
 {
     border-radius: 5px;
     padding:5px;
-    --float:left;
     background-color: white;
-    --margin-left:20px;
+    margin-right:10px;
     margin-bottom:5px;
 }
