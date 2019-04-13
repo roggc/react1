@@ -69,7 +69,7 @@ const comp = (props)=>
           <ul>
             <li>
               <div  onClick={toggleShowModalIdiom}>
-                {selectIdiom(msgs3)(props)}
+                {selectIdiom(msgs3)(props.idiom)}
                 <i className="fas fa-angle-right"></i>
               </div>
               <Modal show={showModalIdiom}>
@@ -79,23 +79,26 @@ const comp = (props)=>
               </Modal>
             </li>
             <li>
-              <Link to="/about/">{selectIdiom(msgs4)(props)}</Link>
+              <Link to="/about/">{selectIdiom(msgs4)(props.idiom)}</Link>
             </li>
             <li>
-              <Link to="/contact/">{selectIdiom(msgs6)(props)}</Link>
+              <Link to="/contact/">{selectIdiom(msgs6)(props.idiom)}</Link>
             </li>
             <li>
-              <Link to="/">{selectIdiom(msgs5)(props)}</Link>
+              <Link to="/">{selectIdiom(msgs5)(props.idiom)}</Link>
+            </li>
+            <li>
+              <Link to="/spotify/">spotify</Link>
             </li>
           </ul>
         </div>
       </Menu>
       <div id='cabecera'>
         <div className='msg'>
-          <span>{selectIdiom(msgs1)(props)}</span>
+          <span>{selectIdiom(msgs1)(props.idiom)}</span>
         </div>
         <div className='msg'>
-          <span>{selectIdiom(msgs2)(props)}</span>
+          <span>{selectIdiom(msgs2)(props.idiom)}</span>
         </div>
         <div className='clearfix'/>
       </div>

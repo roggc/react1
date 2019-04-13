@@ -1,8 +1,7 @@
 //index.js
 
 import React from 'react';
-import { connect } from 'react-redux';
-import {selectIdiom} from '../../globals';
+import Cabecera from '../cabecera/index';
 import './index.scss'
 
 const msgs1=['Home'
@@ -10,25 +9,11 @@ const msgs1=['Home'
 const msgs2=['nothing for the moment in here.'
             ,'Nada por el momento aquí.'];
 
-const comp = (props)=>
+export default (props)=>
 {
   const render=
   (
-    <div id='Home' className='msg'>
-      <div>
-        <h5>{selectIdiom(msgs1)(props)}</h5>
-        <p>{selectIdiom(msgs2)(props)}</p>
-      </div>
-    </div>
+    <Cabecera msgs1={msgs1} msgs2={msgs2}/>
   );
   return render;
 };
-
-const mapStateToProps=(state)=>
-{
-  return {
-    idiom: state.idiom
-  };
-}
-
-export default connect(mapStateToProps)(comp);
