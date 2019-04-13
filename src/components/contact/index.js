@@ -1,7 +1,9 @@
+//index.js
+
 import React from 'react';
 import { connect } from 'react-redux';
-import {SelectIdiom} from '../../globals.js';
-import './contact.scss';
+import {selectIdiom} from '../../globals';
+import './index.scss';
 
 const msgs1=['Contact'
             ,'Datos de Contacto'];
@@ -9,14 +11,14 @@ const msgs1=['Contact'
 const msgs2=['nppcpp corp. Barcelona.'
             ,'nppcpp corp. Barcelona.'];
 
-const Contact = (props)=>
+const comp = (props)=>
 {
   const render=
   (
     <div id='Contact' className='msg'>
       <div>
-        <h5>{SelectIdiom(msgs1)(props)}</h5>
-        <p>{SelectIdiom(msgs2)(props)}</p>
+        <h5>{selectIdiom(msgs1)(props)}</h5>
+        <p>{selectIdiom(msgs2)(props)}</p>
       </div>
     </div>
   );
@@ -30,4 +32,4 @@ const mapStateToProps=(state)=>
   };
 }
 
-export default connect(mapStateToProps)(Contact);
+export default connect(mapStateToProps)(comp);

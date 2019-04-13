@@ -1,7 +1,8 @@
+//globals.js
 
 export const idioms=['english','español'];
 
-export const SelectIdiom=(msgs)=>(props)=>
+export const selectIdiom=(msgs)=>(props)=>
 {
     switch(props.idiom)
     {

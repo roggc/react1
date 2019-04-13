@@ -1,21 +1,23 @@
+//index.js
+
 import React from 'react';
 import { connect } from 'react-redux';
-import {SelectIdiom} from '../../globals.js';
-import './home.scss'
+import {selectIdiom} from '../../globals';
+import './index.scss'
 
 const msgs1=['Home'
             ,'Casa'];
 const msgs2=['nothing for the moment in here.'
             ,'Nada por el momento aquí.'];
 
-const Home = (props)=>
+const comp = (props)=>
 {
   const render=
   (
     <div id='Home' className='msg'>
       <div>
-        <h5>{SelectIdiom(msgs1)(props)}</h5>
-        <p>{SelectIdiom(msgs2)(props)}</p>
+        <h5>{selectIdiom(msgs1)(props)}</h5>
+        <p>{selectIdiom(msgs2)(props)}</p>
       </div>
     </div>
   );
@@ -29,4 +31,4 @@ const mapStateToProps=(state)=>
   };
 }
 
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps)(comp);

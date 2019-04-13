@@ -1,7 +1,9 @@
+//index.js
+
 import React from 'react';
 import { connect } from 'react-redux';
-import './about.scss';
-import {idioms, SelectIdiom} from '../../globals.js';
+import {selectIdiom} from '../../globals';
+import './index.scss';
 
 const msgs1=['About'
             ,'Acerca de'];
@@ -9,14 +11,14 @@ const msgs1=['About'
 const msgs2=['This is a page about react development.'
             ,'Esta es una página de desarrollo en react.'];
 
-const About = (props)=>
+const comp = (props)=>
 {
   const render=
   (
     <div id='About' className='msg'>
       <div>
-        <h5>{SelectIdiom(msgs1)(props)}</h5>
-        <p>{SelectIdiom(msgs2)(props)}</p>
+        <h5>{selectIdiom(msgs1)(props)}</h5>
+        <p>{selectIdiom(msgs2)(props)}</p>
       </div>
     </div>
   );
@@ -30,4 +32,4 @@ const mapStateToProps=(state)=>
   };
 }
 
-export default connect(mapStateToProps)(About);
+export default connect(mapStateToProps)(comp);

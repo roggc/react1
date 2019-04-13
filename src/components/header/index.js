@@ -1,11 +1,13 @@
+//index.js
+
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
-import Menu from '../menu/Menu.js';
-import Modal from '../modal/Modal.js';
-import { SetIdiom } from '../../actions/Actions';
-import {idioms,SelectIdiom} from '../../globals.js';
-import './header.scss';
+import Menu from '../menu/index';
+import Modal from '../modal/index';
+import { setIdiom } from '../../actions/index';
+import {idioms,selectIdiom} from '../../globals';
+import './index.scss';
 
 const msgs1= ['Wellcome to react dev page!!!'
               ,'Bienvenidos a mi nueva página!!!'];
@@ -20,18 +22,18 @@ const msgs5= ['home'
 const msgs6=['contact'
             ,'contacto'];
 
-const Header = (props)=>
+const comp = (props)=>
 {
   //managing idiom global state
   const setIdiom0=()=>
   {
-    props.SetIdiom(idioms[0]);
+    props.setIdiom(idioms[0]);
   };
   const setIdiom1=()=>
   {
-    props.SetIdiom(idioms[1]);
+    props.setIdiom(idioms[1]);
   };
-  const SetIdiom_=(idiom)=>
+  const setIdiom_=(idiom)=>
   {
     switch (idiom){
       case idioms[0]: return setIdiom0;
@@ -41,7 +43,7 @@ const Header = (props)=>
 
   //managing showModal local state
   const [showModalIdiom, setShowModalIdiom] = useState(false);
-  const ShowModalIdiom=()=>
+  const toggleShowModalIdiom=()=>
   {
     setShowModalIdiom(!showModalIdiom);
   };
@@ -51,8 +53,8 @@ const Header = (props)=>
     (idiom)=>
     (
       <li>
-        <div onClick={SetIdiom_(idiom)}>
-          <i class="fas fa-angle-right"></i>
+        <div onClick={setIdiom_(idiom)}>
+          <i className="fas fa-angle-right"></i>
           {idiom}
         </div>
       </li>
@@ -66,9 +68,9 @@ const Header = (props)=>
         <div>
           <ul>
             <li>
-              <div  onClick={ShowModalIdiom}>
-                {SelectIdiom(msgs3)(props)}
-                <i class="fas fa-angle-right"></i>
+              <div  onClick={toggleShowModalIdiom}>
+                {selectIdiom(msgs3)(props)}
+                <i className="fas fa-angle-right"></i>
               </div>
               <Modal show={showModalIdiom}>
                 <div>
@@ -77,23 +79,23 @@ const Header = (props)=>
               </Modal>
             </li>
             <li>
-              <Link to="/about/">{SelectIdiom(msgs4)(props)}</Link>
+              <Link to="/about/">{selectIdiom(msgs4)(props)}</Link>
             </li>
             <li>
-              <Link to="/contact/">{SelectIdiom(msgs6)(props)}</Link>
+              <Link to="/contact/">{selectIdiom(msgs6)(props)}</Link>
             </li>
             <li>
-              <Link to="/">{SelectIdiom(msgs5)(props)}</Link>
+              <Link to="/">{selectIdiom(msgs5)(props)}</Link>
             </li>
           </ul>
         </div>
       </Menu>
       <div id='cabecera'>
         <div className='msg'>
-          <span>{SelectIdiom(msgs1)(props)}</span>
+          <span>{selectIdiom(msgs1)(props)}</span>
         </div>
         <div className='msg'>
-          <span>{SelectIdiom(msgs2)(props)}</span>
+          <span>{selectIdiom(msgs2)(props)}</span>
         </div>
         <div className='clearfix'/>
       </div>
@@ -111,7 +113,7 @@ const mapStateToProps=(state)=>
 }
 
 const mapDispatchToProps = {
-  SetIdiom
+  setIdiom
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(comp);

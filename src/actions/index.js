@@ -1,6 +1,7 @@
+// index.js
+import {SET_IDIOM} from './types';
 
-export const SET_IDIOM='SET_IDIOM';
-export const SetIdiom=(idiom)=>
+export const setIdiom=(idiom)=>
 {
   const action=
   {

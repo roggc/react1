@@ -1,8 +1,9 @@
+//index.js
+
 import React, { useState } from 'react';
+import './index.scss';
 
-import './menu.scss';
-
-const Menu = (props)=>
+export default (props)=>
 {
   const [show, setShow] = useState(false);
 
@@ -14,7 +15,7 @@ const Menu = (props)=>
   (
     <div id='Menu' className='menu'>
       <div className='icon'>
-        <i class="fas fa-align-justify" onClick={toggleShow}></i>
+        <i className="fas fa-align-justify" onClick={toggleShow}></i>
       </div>
       <div className='clearfix'/>
       <div className={`content ${show? '' : 'noDisplay'}`}>
@@ -26,5 +27,3 @@ const Menu = (props)=>
 
   return render;
 };
-
-export default Menu;

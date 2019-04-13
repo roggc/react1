@@ -1,8 +1,9 @@
+//index.js
+
 import React from 'react';
+import './index.scss';
 
-import './modal.scss';
-
-const Modal = (props)=>
+export default (props)=>
 {
   const render =
   (
@@ -14,5 +15,3 @@ const Modal = (props)=>
   );
   return render;
 };
-
-export default Modal;

@@ -1,13 +1,13 @@
+//index.js
+
 import React from 'react';
 import { Route, Link } from 'react-router-dom'
+import Home from '../home/index'
+import Contact from '../contact/index'
+import About from '../about/index'
+import './index.scss'
 
-import './content.scss'
-
-import Home from '../home/Home'
-import Contact from '../contact/Contact'
-import About from '../about/About'
-
-const Content = ()=>
+export default ()=>
 (
   <div id='Content'>
     <Route exact path="/" component={Home} />
@@ -15,5 +15,3 @@ const Content = ()=>
     <Route path="/contact" component={Contact} />
   </div>
 );
-
-export default Content;
