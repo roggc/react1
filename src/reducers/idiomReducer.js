@@ -3,31 +3,13 @@
 import {idioms} from '../globals';
 import {SET_IDIOM} from '../actions/types';
 
-const initialState =
+export default (value= idioms[0], action) =>
 {
-  idiom:idioms[0]
-};
-
-const idiomReducer=(state=initialState, action) =>
-{
-  let newState;
   switch(action.type)
   {
     case SET_IDIOM:
-      newState=
-      {
-        ...state,
-        idiom: action.idiom
-      };
-      break;
+      return action.idiom;
     default:
-      newState=
-      {
-        ...state
-      };
-      break;
+      return value;
   }
-  return newState;
 };
-
-export default idiomReducer;
