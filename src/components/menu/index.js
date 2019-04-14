@@ -13,9 +13,9 @@ export default (props)=>
 
   const render=
   (
-    <div id='Menu' className='menu'>
-      <div className='icon'>
-        <i className="fas fa-align-justify" onClick={toggleShow}></i>
+    <div className='menu'>
+      <div className='msg msgMenu icon' onClick={toggleShow}>
+        <i className="fas fa-align-justify"></i>
       </div>
       <div className='clearfix'/>
       <div className={`content ${show? '' : 'noDisplay'}`}>

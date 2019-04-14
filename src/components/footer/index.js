@@ -7,6 +7,8 @@ export default ()=>
 (
   <div>
     <hr/>
-    <h6>&copy; 2019 nppcpp corp</h6>
+    <div className='msg msgFooter'>
+      <h6>&copy; 2019 nppcpp corp</h6>
+    </div>
   </div>
 );

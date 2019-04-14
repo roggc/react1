@@ -7,8 +7,8 @@ import './index.scss';
 const msgs1=['About'
             ,'Acerca de'];
 
-const msgs2=['This is a page about react development.'
-            ,'Esta es una página de desarrollo en react.'];
+const msgs2=['nppcpp corp Barcelona.'
+            ,'nppcpp corp Barcelona.'];
 
 export default (props)=>
 {

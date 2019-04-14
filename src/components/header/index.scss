@@ -1,20 +1,10 @@
 //index.scss
 
-#Header
+.msgHeader
 {
-  .msg
-  {
-      border-radius: 5px;
-      padding:5px;
-      float:left;
-      background-color: white;
-      margin-bottom:5px;
-  }
-
-  color: purple;
-
-  hr
-  {
-    border-color:purple;
-  }
+    border-radius: 5px;
+    padding:5px;
+    float:left;
+    background-color: white;
+    margin-bottom:5px;
 }

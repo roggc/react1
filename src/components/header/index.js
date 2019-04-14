@@ -28,10 +28,12 @@ const comp = (props)=>
   const setIdiom0=()=>
   {
     props.setIdiom(idioms[0]);
+    toggleShowModalIdiom();
   };
   const setIdiom1=()=>
   {
     props.setIdiom(idioms[1]);
+    toggleShowModalIdiom();
   };
   const setIdiom_=(idiom)=>
   {
@@ -54,7 +56,6 @@ const comp = (props)=>
     (
       <li>
         <div onClick={setIdiom_(idiom)}>
-          <i className="fas fa-angle-right"></i>
           {idiom}
         </div>
       </li>
@@ -63,12 +64,12 @@ const comp = (props)=>
 
   const render =
   (
-    <div id='Header'>
+    <div>
       <Menu>
         <div>
           <ul>
             <li>
-              <div  onClick={toggleShowModalIdiom}>
+              <div onClick={toggleShowModalIdiom}>
                 {selectIdiom(msgs3)(props.idiom)}
                 <i className="fas fa-angle-right"></i>
               </div>
@@ -82,9 +83,6 @@ const comp = (props)=>
               <Link to="/about/">{selectIdiom(msgs4)(props.idiom)}</Link>
             </li>
             <li>
-              <Link to="/contact/">{selectIdiom(msgs6)(props.idiom)}</Link>
-            </li>
-            <li>
               <Link to="/">{selectIdiom(msgs5)(props.idiom)}</Link>
             </li>
             <li>
@@ -94,10 +92,10 @@ const comp = (props)=>
         </div>
       </Menu>
       <div id='cabecera'>
-        <div className='msg'>
+        <div className='msg msgHeader'>
           <span>{selectIdiom(msgs1)(props.idiom)}</span>
         </div>
-        <div className='msg'>
+        <div className='msg msgHeader'>
           <span>{selectIdiom(msgs2)(props.idiom)}</span>
         </div>
         <div className='clearfix'/>

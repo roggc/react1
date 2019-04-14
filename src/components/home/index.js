@@ -13,7 +13,9 @@ export default (props)=>
 {
   const render=
   (
-    <Cabecera msgs1={msgs1} msgs2={msgs2}/>
+    <div>
+      <Cabecera msgs1={msgs1} msgs2={msgs2}/>
+    </div>
   );
   return render;
 };

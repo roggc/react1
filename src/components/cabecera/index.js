@@ -10,7 +10,7 @@ const comp= (props)=>
   //const {props.msgs1,msgs2,...props}=props.children;
   const render=
   (
-    <div className='msg'>
+    <div className='msg msgCabecera'>
       <div>
         <h5>{selectIdiom(props.msgs1)(props.idiom)}</h5>
         <p>{selectIdiom(props.msgs2)(props.idiom)}</p>

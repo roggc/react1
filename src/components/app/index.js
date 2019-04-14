@@ -5,7 +5,6 @@ import {BrowserRouter as Router} from 'react-router-dom';
 import Header from '../header/index';
 import Content from '../content/index';
 import Footer from '../footer/index';
-import 'babel-polyfill';
 import './index.scss';
 
 export default ()=>
