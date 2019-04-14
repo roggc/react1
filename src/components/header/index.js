@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
 import Menu from '../menu/index';
 import Modal from '../modal/index';
-import {idiomSetIdiom,menuSetShowModalIdiom} from '../../actions/index';
+import {idiomSetIdiom,menuSetShowModalIdiom,menuReset} from '../../actions/index';
 import {idioms,selectIdiom} from '../../globals';
 import './index.scss';
 
@@ -27,12 +27,12 @@ const comp = (props)=>
   const setIdiom0=()=>
   {
     props.idiomSetIdiom(idioms[0]);
-    toggleShowModalIdiom();
+    props.menuReset();
   };
   const setIdiom1=()=>
   {
     props.idiomSetIdiom(idioms[1]);
-    toggleShowModalIdiom();
+    props.menuReset();
   };
   const setIdiom_=(idiom)=>
   {
@@ -81,17 +81,17 @@ const comp = (props)=>
                     </Modal>
                   </li>
                   <li>
-                    <div onClick={()=>props.menuSetShowModalIdiom(false)}>
+                    <div onClick={()=>props.menuReset()}>
                       <Link to="/about/">{selectIdiom(msgs4)(props.idiom)}</Link>
                     </div>
                   </li>
                   <li>
-                    <div onClick={()=>props.menuSetShowModalIdiom(false)}>
+                    <div onClick={()=>props.menuReset()}>
                       <Link to="/">{selectIdiom(msgs5)(props.idiom)}</Link>
                     </div>
                   </li>
                   <li>
-                    <div onClick={()=>props.menuSetShowModalIdiom(false)}>
+                    <div onClick={()=>props.menuReset()}>
                       <Link to="/spotify/">spotify</Link>
                     </div>
                   </li>
@@ -127,7 +127,8 @@ const mapStateToProps=(state)=>
 
 const mapDispatchToProps = {
   idiomSetIdiom,
-  menuSetShowModalIdiom
+  menuSetShowModalIdiom,
+  menuReset
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(comp);

@@ -1,12 +1,20 @@
 //index.js
 
-import React, {useState} from 'react';
+import React, {useRef} from 'react';
 import {connect} from 'react-redux';
 import {menuReset, menuSetShowMenu} from '../../actions/index';
+import {useOuterClickNotifier} from '../../hooks/index';
 import './index.scss';
 
 const comp= (props)=>
 {
+  const innerRef = useRef(null);
+  
+  useOuterClickNotifier(
+    (e) => props.menuReset(),
+    innerRef
+  );
+
   const menuClick=()=>
   {
     if(props.menu.showMenu)
@@ -20,7 +28,7 @@ const comp= (props)=>
 
   const render=
   (
-    <div className='menu'>
+    <div className='menu' ref={innerRef}>
       <div className='msg msgMenu icon' onClick={menuClick}>
         <i className="fas fa-align-justify"></i>
       </div>

@@ -9,7 +9,7 @@ import './index.scss';
 
 export default ()=>
  (
-  <div>
+   <div className='wrapperApp'>
     <Router>
       <div>
         <Header/>
