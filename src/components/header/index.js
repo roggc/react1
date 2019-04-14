@@ -24,7 +24,6 @@ const msgs6=['contact'
 
 const comp = (props)=>
 {
-  //managing idiom global state
   const setIdiom0=()=>
   {
     props.idiomSetIdiom(idioms[0]);
@@ -82,13 +81,19 @@ const comp = (props)=>
                     </Modal>
                   </li>
                   <li>
-                    <Link to="/about/">{selectIdiom(msgs4)(props.idiom)}</Link>
+                    <div onClick={()=>props.menuSetShowModalIdiom(false)}>
+                      <Link to="/about/">{selectIdiom(msgs4)(props.idiom)}</Link>
+                    </div>
                   </li>
                   <li>
-                    <Link to="/">{selectIdiom(msgs5)(props.idiom)}</Link>
+                    <div onClick={()=>props.menuSetShowModalIdiom(false)}>
+                      <Link to="/">{selectIdiom(msgs5)(props.idiom)}</Link>
+                    </div>
                   </li>
                   <li>
-                    <Link to="/spotify/">spotify</Link>
+                    <div onClick={()=>props.menuSetShowModalIdiom(false)}>
+                      <Link to="/spotify/">spotify</Link>
+                    </div>
                   </li>
                 </ul>
               </div>
