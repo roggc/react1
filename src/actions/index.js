@@ -1,37 +1,35 @@
 // index.js
 
+import * as types from './types';
 import axios from 'axios';
 
-export const SET_IDIOM = 'SET_IDIOM';
-export const setIdiom=(idiom)=>
+export const idiomSetIdiom=(val)=>
 {
-  const action=
+  const act=
   {
-    type:SET_IDIOM,
-    idiom: idiom
+    type: types.IDIOM_SET,
+    idiom: val
   };
-  return action;
+  return act;
 };
 
-export const SPOTIFY_SET_DATA = 'SPOTIFY_SET_DATA';
-const spotifySetData=(data)=>
+const spotifySetData=(dat)=>
 {
-  const action=
+  const act=
   {
-    type:SPOTIFY_SET_DATA,
-    data:data
+    type: types.SPOTIFY_SET_DATA,
+    data: dat
   };
-  return action;
+  return act;
 };
 
-export const SPOTIFY_RESET = 'SPOTIFY_RESET';
 export const spotifyReset=()=>
 {
-  const action=
+  const act=
   {
-    type:SPOTIFY_RESET
+    type: types.SPOTIFY_RESET
   };
-  return action;
+  return act;
 };
 
 export const spotifyFetchData= ()=>(dispatch)=>
@@ -54,3 +52,32 @@ export const spotifyFetchData= ()=>(dispatch)=>
       });
     });
 };
+
+export const menuReset=()=>
+{
+  const act=
+  {
+    type: types.MENU_RESET
+  };
+  return act;
+}
+
+export const menuSetShowModalIdiom=(val)=>
+{
+  const act=
+  {
+    type: types.MENU_SET_SHOW_MODAL_IDIOM,
+    val: val
+  };
+  return act;
+}
+
+export const menuSetShowMenu=(val)=>
+{
+  const act=
+  {
+    type: types.MENU_SET_SHOW_MENU,
+    val: val
+  };
+  return act;
+}

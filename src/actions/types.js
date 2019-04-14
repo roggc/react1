@@ -1,0 +1,8 @@
+//types.js
+
+export const IDIOM_SET = 'IDIOM_SET';
+export const SPOTIFY_SET_DATA = 'SPOTIFY_SET_DATA';
+export const SPOTIFY_RESET = 'SPOTIFY_RESET';
+export const MENU_RESET = 'MENU_RESET';
+export const MENU_SET_SHOW_MODAL_IDIOM = 'MENU_SET_SHOW_MODAL_IDIOM';
+export const MENU_SET_SHOW_MENU = 'MENU_SET_SHOW_MENU';

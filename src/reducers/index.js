@@ -1,47 +1,85 @@
 //index.js
 
 import { combineReducers } from 'redux';
-import {SET_IDIOM,SPOTIFY_SET_DATA,SPOTIFY_RESET} from '../actions/index';
+import * as types from '../actions/types';
 import {idioms} from '../globals';
 
-const idiomReducer= (value= idioms[0], action) =>
+const menuReducer=(val={showModalIdiom:false,showMenu:false}, act)=>
 {
-  switch(action.type)
+  let newVal;
+  switch(act.type)
   {
-    case SET_IDIOM:
-      return action.idiom;
+    case types.MENU_RESET:
+      newVal=
+      {
+        ...val,
+        showModalIdiom:false,
+        showMenu:false
+      };
+      break;
+    case types.MENU_SET_SHOW_MODAL_IDIOM:
+      newVal=
+      {
+        ...val,
+        showModalIdiom: act.val
+      };
+      break;
+    case types.MENU_SET_SHOW_MENU:
+      newVal=
+      {
+        ...val,
+        showMenu: act.val
+      };
+      break;
     default:
-      return value;
+      return val;
   }
+  return newVal;
 };
 
-const spotifyReducer=(value={pending:true,data:{}}, action)=>
+const idiomReducer= (val= idioms[0], act) =>
 {
-  let ob;
-  switch(action.type)
+  let newVal;
+  switch(act.type)
   {
-    case SPOTIFY_SET_DATA:
-      ob=
+    case types.IDIOM_SET:
+      newVal= act.idiom;
+      break;
+    default:
+      return val;
+  }
+  return newVal;
+};
+
+const spotifyReducer=(val={pending:true,data:{}}, act)=>
+{
+  let newVal;
+  switch(act.type)
+  {
+    case types.SPOTIFY_SET_DATA:
+      newVal=
       {
-        ...value,
+        ...val,
         pending:false,
-        data: action.data
-      }
-      return ob;
-    case SPOTIFY_RESET:
-      ob=
+        data: act.data
+      };
+      break;
+    case types.SPOTIFY_RESET:
+      newVal=
       {
-        ...value,
+        ...val,
         pending:true,
         data: {}
-      }
-      return ob;
+      };
+      break;
     default:
-      return value;
+      return val;
   }
+  return newVal;
 };
 
 export default combineReducers({
     idiom: idiomReducer,
-    spotify: spotifyReducer
+    spotify: spotifyReducer,
+    menu: menuReducer
 });
