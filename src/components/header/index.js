@@ -2,7 +2,7 @@
 
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 import Menu from '../menu/index';
 import Modal from '../modal/index';
 import {idiomSetIdiom,menuSetShowModalIdiom,menuReset} from '../../actions/index';
@@ -59,6 +59,11 @@ const comp = (props)=>
     )
   );
 
+  const onClickLink=()=>
+  {
+    props.menuReset();
+  };
+
   const render =
   (
     <div>
@@ -81,17 +86,17 @@ const comp = (props)=>
                     </Modal>
                   </li>
                   <li>
-                    <div onClick={()=>props.menuReset()}>
+                    <div onClick={onClickLink}>
                       <Link to="/about/">{selectIdiom(msgs4)(props.idiom)}</Link>
                     </div>
                   </li>
                   <li>
-                    <div onClick={()=>props.menuReset()}>
+                    <div onClick={onClickLink}>
                       <Link to="/">{selectIdiom(msgs5)(props.idiom)}</Link>
                     </div>
                   </li>
                   <li>
-                    <div onClick={()=>props.menuReset()}>
+                    <div onClick={onClickLink}>
                       <Link to="/spotify/">spotify</Link>
                     </div>
                   </li>

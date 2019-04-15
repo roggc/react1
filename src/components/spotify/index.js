@@ -1,6 +1,7 @@
 //index.js
 
 import React from 'react';
+import {connect} from 'react-redux';
 import Cabecera from '../cabecera/index';
 import Grid from './grid';
 import Fetch from './fetch';
@@ -12,15 +13,24 @@ const msgs1=['Spotify!!!'
 const msgs2=['Here you can see songs from spotify!'
             ,'Aquí puedes ver canciones de spotify!'];
 
-export default (props)=>
+const comp= (props)=>
 {
   const render=
   (
-    <div>
-      <Cabecera msgs1={msgs1} msgs2={msgs2} />
+    <div className={props.router.spotify?'opacityOn':'opacityOff'}>
+      <Cabecera msgs1={msgs1} msgs2={msgs2}>{()=>''}</Cabecera>
       <Fetch/>
       <Grid/>
     </div>
   );
   return render;
 };
+
+const mapStateToProps=(state)=>
+{
+  return {
+    router: state.router
+  };
+};
+
+export default connect(mapStateToProps)(comp);

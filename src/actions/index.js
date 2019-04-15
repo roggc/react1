@@ -81,3 +81,48 @@ export const menuSetShowMenu=(val)=>
   };
   return act;
 }
+
+export const routerTurnOnHome= ()=>
+{
+  const act=
+  {
+    type: types.ROUTER_TURN_ON_HOME
+  };
+  return act;
+};
+
+export const routerTurnOnAbout= ()=>
+{
+  const act=
+  {
+    type: types.ROUTER_TURN_ON_ABOUT
+  };
+  return act;
+};
+
+export const routerTurnOnSpotify= ()=>
+{
+  const act=
+  {
+    type: types.ROUTER_TURN_ON_SPOTIFY
+  };
+  return act;
+};
+
+export const routerTurnOffHome= ()=>
+{
+  const act=
+  {
+    type: types.ROUTER_TURN_OFF_HOME
+  };
+  return act;
+};
+
+export const routerTurnOff= ()=>
+{
+  const act=
+  {
+    type: types.ROUTER_TURN_OFF
+  };
+  return act;
+};

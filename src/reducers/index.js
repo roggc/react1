@@ -78,8 +78,62 @@ const spotifyReducer=(val={pending:true,data:{}}, act)=>
   return newVal;
 };
 
+const routerReducer= (val=
+  {
+    home:false,
+    about:false,
+    spotify:false
+  }, act) =>
+{
+  let newVal;
+  switch(act.type)
+  {
+    case types.ROUTER_TURN_ON_HOME:
+      newVal=
+      {
+        ...val,
+        home:true
+      };
+      break;
+    case types.ROUTER_TURN_ON_ABOUT:
+      newVal=
+      {
+        ...val,
+        about:true
+      };
+      break;
+    case types.ROUTER_TURN_ON_SPOTIFY:
+      newVal=
+      {
+        ...val,
+        spotify:true
+      };
+      break;
+    case types.ROUTER_TURN_OFF_HOME:
+      newVal=
+      {
+        ...val,
+        home:false
+      };
+      break;
+    case types.ROUTER_TURN_OFF:
+      newVal=
+      {
+        ...val,
+        home:false,
+        about:false,
+        spotify:false
+      };
+      break;
+    default:
+      return val;
+  }
+  return newVal;
+};
+
 export default combineReducers({
     idiom: idiomReducer,
     spotify: spotifyReducer,
-    menu: menuReducer
+    menu: menuReducer,
+    router: routerReducer
 });

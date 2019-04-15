@@ -47,3 +47,15 @@ hr
 {
   display: none;
 }
+
+.opacityOn
+{
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.opacityOff
+{
+  opacity: 0;
+  transition: opacity 0.0s;
+}
