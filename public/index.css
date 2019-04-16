@@ -7,7 +7,7 @@ body
 {
   background-color: black;
   color:purple;
-  --margin:20px 20px;
+  /* --margin:20px 20px; */
   font-family: sans-serif;
   user-select: none;
   height: 10000px;
@@ -58,4 +58,24 @@ hr
 {
   opacity: 0;
   transition: opacity 0.0s;
+}
+
+.mainContainer
+{
+  float:left;
+  position:relative;
+  left:50%;
+}
+
+.fixerContainer
+{
+  float:left;
+  position:relative;
+  left: -50%;
+}
+
+.flexFlowContainer {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
 }

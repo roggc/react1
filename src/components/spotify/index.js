@@ -17,7 +17,7 @@ const comp= (props)=>
 {
   const render=
   (
-    <div className={props.router.spotify?'opacityOn':'opacityOff'}>
+    <div className={props.router.spotify?'flexFlowContainer':'opacityOff'}>
       <Cabecera msgs1={msgs1} msgs2={msgs2}>{()=>''}</Cabecera>
       <Fetch/>
       <Grid/>

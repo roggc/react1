@@ -8,8 +8,20 @@ const comp= (props)=>
 {
   const render=
   (
-    <div>
-      <div className={props.spotify.pending?'':'noDisplay'}><i className="fas fa-spinner"></i></div>
+    <div className='spotifyGrid'>
+    {
+
+        // <div className={props.spotify.pending?'mainContainer':'noDisplay'}>
+        //   <div className='fixerContainer'>
+        //     <div className='msg'><i className="fas fa-spinner fa-spin"></i></div>
+        //   </div>
+        // </div>
+        // <div className='clearfix'/>
+    }
+
+      <div className={props.spotify.pending?'spotifyLoadingContainer':'noDisplay'}>
+        <div className='msg'><i className="fas fa-spinner fa-spin"></i></div>
+      </div>
       <div className={props.spotify.pending?'noDisplay':'cardContainer'}>
         {
           props.spotify.pending?'':
