@@ -1,6 +1,5 @@
 html
 {
-  height:10000px;
 }
 
 body
@@ -10,7 +9,6 @@ body
   /* --margin:20px 20px; */
   font-family: sans-serif;
   user-select: none;
-  height: 10000px;
 }
 
 #root
