@@ -1,1 +1,1 @@
-hi everyone!
+this is a react app with create-react-app and redux. you have to run 'npm install' for installing the dependencies and 'npm run start' or 'yarn start' to start the development. 'npm run build' for building. once you have built you can run 'npm run node' to run the app from an express app (this last it's a test).
