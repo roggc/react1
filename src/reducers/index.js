@@ -1,6 +1,6 @@
 //index.js
 
-import { combineReducers } from 'redux';
+import {combineReducers} from 'redux';
 import * as types from '../actions/types';
 import {idioms} from '../globals';
 

@@ -8,7 +8,21 @@ import {Provider} from 'react-redux';
 import rootReducer from './reducers/index';
 import App from './components/app/index';
 
-const store = createStore(rootReducer, applyMiddleware(thunk));
+const logger=({ getState })=> {
+  return next => action => {
+    console.log('will dispatch', action)
+
+    const returnValue = next(action)
+
+    console.log('state after dispatch', getState())
+
+    return returnValue
+  }
+};
+
+const middleware=[thunk, logger];
+
+const store = createStore(rootReducer, applyMiddleware(...middleware));
 
 render
 (
